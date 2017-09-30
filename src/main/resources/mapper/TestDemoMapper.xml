@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.gaokao.system.dao.TestDemoInterface">
+
+    <select id="addTestDemo" resultType="com.gaokao.system.pojo.TestDemo">
+        INSERT  INTO   T_MAJOR_PRE_SCORE(T_MAJOR_PRE_SCORE.TYPE,COLLEGE,MAJOR,HIGH_SCORE,HIGH_SCORE_RANK,LOW_SCORE,LOW_SCORE_RANK,
+                                          AVERAGE_SCORE,AVERAGE_SCORE_RANK,T_MAJOR_PRE_SCORE.YEAR,BATCH,ADMISSION_NUMBER)
+        VALUES(#{type},#{college},#{major},#{highScore},#{highScoreRank},#{lowScore},#{lowScoreRank},
+                #{averageScore},#{averageScoreRank},#{year},#{batch},#{admissionNumber})
+    </select>
+
+</mapper>

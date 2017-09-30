@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.gaokao.system.dao.UserInterface">
+
+    <!--通过用户名查询用户-->
+    <select id="queryUserByName" resultType="com.gaokao.system.pojo.User">
+        select id,user_name,user_password,user_type,stu_name
+        from t_sys_user
+        where user_name=#{userName}
+    </select>
+
+    <select id="queryUserNameById" resultType="String" parameterType="int">
+        select user_name
+        from t_sys_user
+        where id=#{userId}
+    </select>
+    <select id="queryStuNameById" resultType="String">
+          select stu_name
+        from t_sys_user
+        where id=#{userId}
+    </select>
+</mapper>
